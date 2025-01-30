@@ -1,28 +1,39 @@
 module Colon.IO where
 
-import Colon.Types
 import Colon.Interpreter
-import qualified Data.Map as Map
+import Colon.Types
+import Colon.IOCommands (dot, cr, emit, stringLiteral, key)
+import System.IO (hFlush, stdout)
+import Colon.Parser
 
--- Функция для запроса значения переменной от пользователя
-getVarValue :: String -> IO Int
-getVarValue varName = do
-    putStrLn $ "Enter value for " ++ varName ++ ":"
+-- Функция вывода состояния стека
+printStack :: InterpreterState -> IO ()
+printStack state = putStrLn $ "Stack: " ++ show (stack state)
+
+-- Обработка пользовательского ввода
+processInput :: InterpreterState -> String -> IO InterpreterState
+processInput state input =
+    case parseCommands (words input) of
+        Left err -> do
+            putStrLn $ "Parse error: " ++ err
+            return state
+        Right cmds -> do
+            putStrLn $ "Stack before execution: " ++ show (stack state)  -- Выводим стек перед выполнением
+            newState <- interpretIO state cmds
+            putStrLn $ "Stack after execution: " ++ show (stack newState) -- Выводим стек после выполнения
+            printStack newState
+            -- return newState { stack = [] }  -- Очищаем стек после выполнения
+            return newState
+
+-- Основной REPL (Read-Eval-Print Loop)
+repl :: InterpreterState -> IO ()
+repl state = do
+    putStr "> "
+    hFlush stdout
     input <- getLine
-    return (read input :: Int)
-
--- Функция для запроса математического выражения от пользователя
-getExpression :: IO String
-getExpression = do
-    putStrLn "Enter an expression to evaluate (e.g., x + 5):"
-    getLine
-
--- Функция для вывода результата
-outputResult :: EvalResult -> IO ()
-outputResult result = putStrLn $ "Result: " ++ show result
-
--- Функция для вычисления выражения и вывода результата
-evalAndOutput :: Env -> Expr -> IO ()
-evalAndOutput env expr = do
-    let result = eval env expr
-    outputResult result
+    case input of
+        ":quit" -> putStrLn "Goodbye!"
+        ":printStack" -> printStack state >> repl state  -- Вывод стека
+        _ -> do
+            newState <- processInput state input
+            repl newState

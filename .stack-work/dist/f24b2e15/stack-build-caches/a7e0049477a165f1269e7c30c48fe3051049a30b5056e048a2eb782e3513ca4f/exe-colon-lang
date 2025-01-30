@@ -1,16 +1,18 @@
 C:\Users\user\IdeaProjects\colon\colon-lang\CHANGELOG.md:
   hash: ed852e6a45df8e7c85b9ecfa89222a7227bcf62c4834d21cd998d86e43947aa8
 C:\Users\user\IdeaProjects\colon\colon-lang\README.md:
-  hash: dc1b6ff7d6543f98c36b09ce08bd29d627b9211557a466d84d2ac552a93de192
+  hash: 1af8fb310a9416d02371fad29adce8597cbeb69cc7bf08cef1c69020278b4623
 C:\Users\user\IdeaProjects\colon\colon-lang\colon-lang.cabal:
-  hash: 67be740080a90b37960cfd3b395164410a1e7079a3a469b89937b5e3e1f2cd65
+  hash: 69b63c03ca0cf1741f18d285565fbc573a25a798e5e3e8fd6e70d72e1114bd59
+C:\Users\user\IdeaProjects\colon\colon-lang\src\Colon\IO.hs:
+  hash: e23a2206cd656a0b6b854d3f247e64da463d7f15fd4601b28eb2abbcfa941bbd
+C:\Users\user\IdeaProjects\colon\colon-lang\src\Colon\IOCommands.hs:
+  hash: 5c9cb2bf4027423749dcfaec844705aab5554e17575538e937ad9357c40a39f5
 C:\Users\user\IdeaProjects\colon\colon-lang\src\Colon\Interpreter.hs:
-  hash: aab814d0cd6400915076da4aa7a35eb78d286026656785743ddb2b463ad63128
-C:\Users\user\IdeaProjects\colon\colon-lang\src\Colon\StackOps.hs:
-  hash: fea72c14f1f82a80dfa122deaac498b56980d9f6643b7076430c2aaabc4003b2
-C:\Users\user\IdeaProjects\colon\colon-lang\src\Colon\Tests.hs:
-  hash: dd975637c2b48634338f0a7122c29ad7051d90f61dd7890786549544e083af75
+  hash: 8fa5828a6dd831cc7daf5d705bb63404cd1bf57eb9505fef400f7add5b868514
+C:\Users\user\IdeaProjects\colon\colon-lang\src\Colon\Parser.hs:
+  hash: 93b741cf2a6c8e0736a45c2b28baa4f7d88691d684ff377c97029c8e099d2108
 C:\Users\user\IdeaProjects\colon\colon-lang\src\Colon\Types.hs:
-  hash: 0980d00e8b890bf017c92cbc8cfa581930d57962a5409538756a460d69ff6018
+  hash: 17ac493c7fc965257434c3a5d79fef2167da1045af5f6792c3313542c106e72f
 C:\Users\user\IdeaProjects\colon\colon-lang\src\Main.hs:
-  hash: 9a8c71b38973230dba0e476a877dd12c5dc7d8024eb4ef71420c204e8f06ce6b
+  hash: ca3c40ce5c8483b9c90484cfb02112546d81c1ff4bc2902385ffde2187861b5c

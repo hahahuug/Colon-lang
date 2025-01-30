@@ -1,46 +1,39 @@
 module Colon.Types where
 
-import qualified Data.Map as Map
+import Data.Map (Map, empty)
 
--- Тип для выражений в языке
-data Expr
-  = Number Int        -- Число
-  | Add Expr Expr     -- Операция сложения
-  | Sub Expr Expr     -- Операция вычитания
-  | Mul Expr Expr     -- Операция умножения
-  | Div Expr Expr     -- Операция деления
-  | Eq Expr Expr      -- Операция равенства
-  | Neq Expr Expr     -- Операция неравенства
-  | Gt Expr Expr      -- Операция больше
-  | Lt Expr Expr      -- Операция меньше
-  | Var String        -- Переменная
-  | If Expr Expr Expr -- Условный оператор (если-иначе)
-  | DoWhile Expr Expr -- Цикл (do-while)
-  | Str String        -- Строка (новая конструкция)
-  | Concat Expr Expr  -- Конкатенация строк (новая операция)
-  deriving (Show, Eq)
+type Stack = [Value]
+type Dictionary = Map String [Command]
 
--- Тип ошибки
-data EvalError
-  = DivisionByZero    -- Ошибка деления на ноль
-  | UndefinedVariable String -- Ошибка неопределенной переменной
-  deriving (Show, Eq)
+data Value
+    = IntVal Integer
+    | StrVal String
+    | BoolVal Bool
+    deriving (Show, Eq)
 
--- Тип для результатов выполнения
-data EvalResult
-  = Value Int         -- Результат вычисления числа
-  | StrValue String   -- Результат вычисления строки
-  | Error EvalError   -- Ошибка выполнения
-  deriving (Eq)
+data Command
+    = Push Integer
+    | Add | Sub | Mul | Div | Mod
+    | Dup | Drop | Swap | Over | Rot
+    | Equal | Less | Greater | And | Or | Invert
+    | IfElse [Command] [Command]
+    | Loop [Command]
+    | Define String [Command]
+    | Execute String
+    | Print | Emit | Cr
+    | Key
+    | StringLiteral String
+    | DotQuote String
+    | Word String  -- Конструктор для имени слова
+    | Semicolon    -- Завершение определения слова
+    deriving (Show, Eq)
 
--- Реализация Show для EvalResult
-instance Show EvalResult where
-  show (Value v) = "Value: " ++ show v
-  show (StrValue s) = "StrValue: \"" ++ s ++ "\""
-  show (Error e) = "Error: " ++ show e
+data InterpreterState = InterpreterState
+    { stack :: Stack
+    , dictionary :: Dictionary
+    , output :: String
+    } deriving (Show, Eq)
 
--- Тип для окружения переменных
-type Env = Map.Map String EvalResult
+emptyState :: InterpreterState
+emptyState = InterpreterState { stack = [], dictionary = empty, output = "" }
 
--- Стек для вычислений
-type Stack = [EvalResult]

@@ -22,7 +22,9 @@ executable colon-lang
   build-depends:       base >= 4.7 && < 5,
                        megaparsec,
                        text,
-                       containers
+                       containers,
+                       HUnit,
+                       mtl >= 2.3
   ghc-options:         -Wall
                        -Wcompat
                        -Widentities

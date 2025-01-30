@@ -47,7 +47,7 @@ getBinDir, getLibDir, getDynLibDir, getDataDir, getLibexecDir, getSysconfDir :: 
 
 bindir, libdir, dynlibdir, datadir, libexecdir, sysconfdir :: FilePath
 bindir     = "C:\\Users\\user\\IdeaProjects\\colon\\colon-lang\\.stack-work\\install\\9b53b651\\bin"
-libdir     = "C:\\Users\\user\\IdeaProjects\\colon\\colon-lang\\.stack-work\\install\\9b53b651\\lib\\x86_64-windows-ghc-9.8.4\\colon-lang-0.1.0.0-Dj7huSugEWgAl1BxsgE3m9-colon-lang"
+libdir     = "C:\\Users\\user\\IdeaProjects\\colon\\colon-lang\\.stack-work\\install\\9b53b651\\lib\\x86_64-windows-ghc-9.8.4\\colon-lang-0.1.0.0-6IEZkU2BS7tF8O9gEXTKOt-colon-lang"
 dynlibdir  = "C:\\Users\\user\\IdeaProjects\\colon\\colon-lang\\.stack-work\\install\\9b53b651\\lib\\x86_64-windows-ghc-9.8.4"
 datadir    = "C:\\Users\\user\\IdeaProjects\\colon\\colon-lang\\.stack-work\\install\\9b53b651\\share\\x86_64-windows-ghc-9.8.4\\colon-lang-0.1.0.0"
 libexecdir = "C:\\Users\\user\\IdeaProjects\\colon\\colon-lang\\.stack-work\\install\\9b53b651\\libexec\\x86_64-windows-ghc-9.8.4\\colon-lang-0.1.0.0"

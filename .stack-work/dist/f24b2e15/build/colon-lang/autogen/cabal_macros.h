@@ -10,6 +10,16 @@
   (major1) == 0 && (major2) <  1 || \
   (major1) == 0 && (major2) == 1 && (minor) <= 0)
 #endif /* MIN_VERSION_colon_lang */
+/* package HUnit-1.6.2.0 */
+#ifndef VERSION_HUnit
+#define VERSION_HUnit "1.6.2.0"
+#endif /* VERSION_HUnit */
+#ifndef MIN_VERSION_HUnit
+#define MIN_VERSION_HUnit(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  6 || \
+  (major1) == 1 && (major2) == 6 && (minor) <= 2)
+#endif /* MIN_VERSION_HUnit */
 /* package base-4.19.2.0 */
 #ifndef VERSION_base
 #define VERSION_base "4.19.2.0"
@@ -40,6 +50,16 @@
   (major1) == 9 && (major2) <  6 || \
   (major1) == 9 && (major2) == 6 && (minor) <= 1)
 #endif /* MIN_VERSION_megaparsec */
+/* package mtl-2.3.1 */
+#ifndef VERSION_mtl
+#define VERSION_mtl "2.3.1"
+#endif /* VERSION_mtl */
+#ifndef MIN_VERSION_mtl
+#define MIN_VERSION_mtl(major1,major2,minor) (\
+  (major1) <  2 || \
+  (major1) == 2 && (major2) <  3 || \
+  (major1) == 2 && (major2) == 3 && (minor) <= 1)
+#endif /* MIN_VERSION_mtl */
 /* package text-2.1.1 */
 #ifndef VERSION_text
 #define VERSION_text "2.1.1"
@@ -123,7 +143,7 @@
 #endif /* MIN_TOOL_VERSION_runghc */
 
 #ifndef CURRENT_COMPONENT_ID
-#define CURRENT_COMPONENT_ID "colon-lang-0.1.0.0-Dj7huSugEWgAl1BxsgE3m9-colon-lang"
+#define CURRENT_COMPONENT_ID "colon-lang-0.1.0.0-6IEZkU2BS7tF8O9gEXTKOt-colon-lang"
 #endif /* CURRENT_COMPONENT_ID */
 #ifndef CURRENT_PACKAGE_VERSION
 #define CURRENT_PACKAGE_VERSION "0.1.0.0"
